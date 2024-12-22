@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sports Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .form-container {
+            width: 400px;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-container h2 {
+            margin-bottom: 20px;
+            color: #333;
+            text-align: center;
+        }
+
+        .form-container label {
+            display: block;
+            margin-bottom: 8px;
+            color: #555;
+        }
+
+        .form-container input, .form-container select, .form-container button {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            outline: none;
+            background-color: #f9f9f9;
+        }
+
+        .form-container button {
+            background-color: #007bff;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .form-container button:hover {
+            background-color: #0056b3;
+        }
+
+        .form-container p {
+            text-align: center;
+            font-size: 14px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Sports Registration Form</h2>
+        <form id="sportsForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" placeholder="Enter your name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" placeholder="Enter your email" required>
+
+            <label for="sport">Interested Sport:</label>
+            <select id="sport" required>
+                <option value="">--Select a Sport--</option>
+                <option value="Football">Football</option>
+                <option value="Cricket">Cricket</option>
+                <option value="Table Tennis">Table Tennis</option>
+                <option value="Badminton">Badminton</option>
+                <option value="Volleyball">Volleyball</option>
+            </select>
+
+            <button type="submit">Submit</button>
+        </form>
+        <p>Thank you for your interest in sports!</p>
+    </div>
+
+    <script>
+        const sportsForm = document.getElementById('sportsForm');
+
+        sportsForm.addEventListener('submit', (event) => {
+            event.preventDefault();
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const sport = document.getElementById('sport').value;
+
+            if (name && email && sport) {
+                alert(`Thank you, ${name}! You have registered for ${sport}.`);
+            } else {
+                alert('Please fill out all the fields.');
+            }
+        });
+    </script>
+</body>
+</html>
